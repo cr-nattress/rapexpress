@@ -1,3 +1,13 @@
+/**
+ * INTENT: Prominent metric display with large value and descriptive label.
+ * UX_CONSTRAINTS:
+ *   - Value should be short (e.g., "40+", "98%", "24/7"). Avoid long strings.
+ *   - Used in horizontal stat ribbons — typically 3-4 per row.
+ * A11Y:
+ *   - Read naturally by screen readers as "40+ Years in Business".
+ * RESPONSIVE:
+ *   - Centers text. Parent grid handles column layout.
+ */
 interface StatBlockProps {
   value: string;
   label: string;

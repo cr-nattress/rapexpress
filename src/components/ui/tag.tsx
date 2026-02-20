@@ -1,3 +1,13 @@
+/**
+ * INTENT: Inline label/badge for categorization or status indication.
+ * UX_CONSTRAINTS:
+ *   - Use semantic variants: "success" for active/completed, "error" for failures, "orange" for highlights.
+ *   - Keep text short (1-2 words). Not for sentences.
+ * A11Y:
+ *   - Rendered as <span> — purely visual. If status is important, pair with visually-hidden text or aria-label on parent.
+ * RESPONSIVE:
+ *   - Inline-flex, wraps naturally in parent layout.
+ */
 type TagVariant = "default" | "navy" | "orange" | "success" | "warning" | "error";
 
 interface TagProps {

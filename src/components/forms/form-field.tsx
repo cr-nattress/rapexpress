@@ -1,3 +1,23 @@
+/**
+ * INTENT: Consistent form field wrapper and input primitives for all forms.
+ * UX_CONSTRAINTS:
+ *   - FormField provides label, required asterisk, and error message display.
+ *   - Input/Textarea/Select accept `error` boolean to toggle red border styling.
+ *   - The `id` on the input MUST match the `name` on FormField for label association.
+ * STATES:
+ *   - default: gray-300 border, navy-500 focus ring
+ *   - error: red-300 border, red-500 focus ring, error message below in role="alert"
+ *   - disabled: inherit from native HTML disabled attribute
+ * A11Y:
+ *   - Labels linked via htmlFor/id pairing.
+ *   - Required fields show red asterisk with aria-hidden (visual only).
+ *   - Error messages use role="alert" for screen reader announcement.
+ * RESPONSIVE:
+ *   - Full-width by default. Use parent grid for side-by-side layout.
+ * PITFALLS:
+ *   - Select uses InputHTMLAttributes<HTMLSelectElement> — cast e.target in onChange.
+ *   - No built-in validation — validation is handled in form handleSubmit.
+ */
 import { type InputHTMLAttributes, type TextareaHTMLAttributes } from "react";
 
 interface FormFieldProps {

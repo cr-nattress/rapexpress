@@ -1,3 +1,20 @@
+/**
+ * INTENT: Service tier display card with details and quote CTA.
+ * UX_CONSTRAINTS:
+ *   - One card per service tier, displayed in a grid.
+ *   - Highlighted tier gets orange ring-2 and "Popular" tag.
+ *   - CTA always links to /quote?service={slug} for pre-selection.
+ * STATES:
+ *   - default: standard card presentation
+ *   - highlighted: orange ring + Popular tag
+ * A11Y:
+ *   - Uses <dl> for structured delivery details (term/definition pairs).
+ *   - Feature list uses semantic <ul>/<li>.
+ *   - Check icons are aria-hidden="true".
+ * RESPONSIVE:
+ *   - flex-col layout — footer always at bottom via flex-1 on content.
+ *   - Full-width on mobile, grid column on desktop.
+ */
 import Link from "next/link";
 import { Card, CardContent, CardFooter, Tag, buttonVariants } from "@/components/ui";
 

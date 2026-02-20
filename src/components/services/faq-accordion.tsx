@@ -1,3 +1,23 @@
+/**
+ * INTENT: Expandable FAQ list with single-open accordion behavior.
+ * UX_CONSTRAINTS:
+ *   - Only one item open at a time — clicking another closes the current.
+ *   - Clicking the open item closes it (toggle behavior).
+ *   - Falls back to built-in defaultFaqs if no items prop provided.
+ * STATES:
+ *   - all collapsed: default state
+ *   - one expanded: chevron rotates 180deg, panel slides open
+ * A11Y:
+ *   - Button has aria-expanded reflecting open state.
+ *   - Button has aria-controls pointing to panel id.
+ *   - Panel has role="region" with aria-labelledby pointing back to button.
+ *   - Chevron SVG has aria-hidden="true".
+ * RESPONSIVE:
+ *   - Full-width, contained by parent Section.
+ * PITFALLS:
+ *   - Panel renders conditionally (not hidden) — no animation on open/close.
+ *   - aria-labelledby references `faq-btn-${i}` but button doesn't have that id yet.
+ */
 "use client";
 
 import { useState } from "react";

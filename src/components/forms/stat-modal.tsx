@@ -1,3 +1,27 @@
+/**
+ * INTENT: Urgent after-hours STAT delivery request modal. Triggers dispatcher notification.
+ * UX_CONSTRAINTS:
+ *   - Opens from "Submit STAT Request" button on contact page.
+ *   - Red pulsing badge signals urgency.
+ *   - Submitting disables button and shows "Sending..." state.
+ *   - Success state confirms dispatcher notification with close button.
+ * STATES:
+ *   - closed: returns null (not rendered)
+ *   - open/form: shows form fields
+ *   - submitting: button disabled, "Sending..." label
+ *   - success: green checkmark, confirmation message, close button
+ * A11Y:
+ *   - role="dialog" + aria-modal="true" + aria-label on overlay.
+ *   - Close button has aria-label="Close dialog".
+ *   - SVG icons have aria-hidden="true".
+ *   - KNOWN GAP: No focus trap — user can Tab into background content.
+ * RESPONSIVE:
+ *   - max-w-lg centered, max-h-[90vh] with overflow scroll.
+ *   - p-4 outer padding for mobile safe area.
+ * PITFALLS:
+ *   - No scroll lock on body when open.
+ *   - Form data resets only on remount (not on close).
+ */
 "use client";
 
 import { useState } from "react";

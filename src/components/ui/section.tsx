@@ -1,3 +1,19 @@
+/**
+ * INTENT: Page-level content block with consistent vertical padding and max-width container.
+ * UX_CONSTRAINTS:
+ *   - Alternate "default" (white) and "gray" variants for visual rhythm.
+ *   - "navy" variant for high-impact CTAs only (max one per page).
+ *   - SectionHeader centers title/subtitle above content.
+ * STATES:
+ *   - Static presentation only.
+ * A11Y:
+ *   - Renders as <section> — use id prop for skip-link targets.
+ * RESPONSIVE:
+ *   - Padding: py-16 (mobile) / py-24 (desktop).
+ *   - Container: max-w-7xl with responsive horizontal padding.
+ * PITFALLS:
+ *   - Section already includes a max-w-7xl container. Don't nest another Container inside.
+ */
 type SectionVariant = "default" | "gray" | "navy";
 
 interface SectionProps {
