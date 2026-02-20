@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { Button } from "@/components/ui";
+import { Button, HeroImage } from "@/components/ui";
 import { FormField, Input, Textarea, Select } from "@/components/forms/form-field";
 import { StepIndicator } from "@/components/forms/step-indicator";
 
@@ -331,8 +331,12 @@ export default function QuotePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy-900 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy-900 py-12 md:py-16">
+        <HeroImage
+          src="/images/heroes/hero-quote.png"
+          alt="Business professional at a laptop preparing a delivery request"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-white md:text-4xl">Get a Quote</h1>
           <p className="mt-3 max-w-xl text-gray-300">
             Tell us about your delivery and we&apos;ll get back to you with pricing within 30

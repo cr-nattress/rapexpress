@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Section, SectionHeader, Container, Card, CardContent, buttonVariants } from "@/components/ui";
+import { Section, SectionHeader, Container, Card, CardContent, buttonVariants, HeroImage } from "@/components/ui";
 
 interface CityData {
   name: string;
@@ -10,6 +10,8 @@ interface CityData {
   servicesHighlight: string;
   localLandmarks: string[];
   commonRoutes: string[];
+  heroImage: string;
+  heroAlt: string;
 }
 
 const cityData: Record<string, CityData> = {
@@ -21,6 +23,8 @@ const cityData: Record<string, CityData> = {
       "Our headquarters and primary service area. Same-day delivery across all of Colorado Springs, from the Air Force Academy to Fort Carson.",
     servicesHighlight:
       "Full service availability including STAT 70-minute guaranteed pickup anywhere in the metro area.",
+    heroImage: "/images/heroes/hero-colorado-springs.png",
+    heroAlt: "Downtown Colorado Springs with Pikes Peak in the background",
     localLandmarks: [
       "Downtown Colorado Springs",
       "USAFA & Peterson SFB",
@@ -43,6 +47,8 @@ const cityData: Record<string, CityData> = {
       "Daily courier service connecting Denver Metro to Colorado Springs and the entire Front Range. Regular routes with competitive pricing.",
     servicesHighlight:
       "Standard and Same Day service with scheduled pickups. STAT available with extended window.",
+    heroImage: "/images/heroes/hero-denver.png",
+    heroAlt: "Denver skyline with Rocky Mountains and highway approach",
     localLandmarks: [
       "Downtown Denver / LoDo",
       "Denver Tech Center",
@@ -65,6 +71,8 @@ const cityData: Record<string, CityData> = {
       "Regular courier service to Pueblo and southern Colorado. Medical, legal, and general delivery for businesses across the Steel City.",
     servicesHighlight:
       "Standard and Same Day delivery. Medical specimen transport to Colorado Springs labs.",
+    heroImage: "/images/heroes/hero-pueblo.png",
+    heroAlt: "Pueblo, Colorado with the Arkansas River and Riverwalk area",
     localLandmarks: [
       "Downtown Pueblo",
       "Parkview Medical Center",
@@ -86,6 +94,8 @@ const cityData: Record<string, CityData> = {
       "Serving Canon City, Florence, and the Royal Gorge area. Regular runs for legal, corrections, and medical facilities.",
     servicesHighlight:
       "Standard and Same Day delivery. Specialized service for correctional facilities and county offices.",
+    heroImage: "/images/heroes/hero-canon-city.png",
+    heroAlt: "Canon City, Colorado with Royal Gorge canyon landscape",
     localLandmarks: [
       "Fremont County Courthouse",
       "St. Thomas More Hospital",
@@ -177,8 +187,9 @@ export default async function CityPage({
       />
 
       {/* Hero */}
-      <section className="bg-navy-900 py-12 md:py-20">
-        <Container>
+      <section className="relative overflow-hidden bg-navy-900 py-12 md:py-20">
+        <HeroImage src={city.heroImage} alt={city.heroAlt} />
+        <Container className="relative">
           <p className="text-sm font-semibold uppercase tracking-wider text-orange-400">
             {city.region}
           </p>

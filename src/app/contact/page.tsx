@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Section, SectionHeader, Button } from "@/components/ui";
+import { Section, SectionHeader, Button, HeroImage } from "@/components/ui";
 import { FormField, Input, Textarea, Select } from "@/components/forms/form-field";
 import { StatModal } from "@/components/forms/stat-modal";
 
@@ -45,8 +45,12 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy-900 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy-900 py-16 md:py-24">
+        <HeroImage
+          src="/images/heroes/hero-contact.png"
+          alt="Friendly dispatcher on a headset in a busy dispatch office"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-400">
             Get In Touch
           </p>

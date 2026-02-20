@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Section, SectionHeader, buttonVariants } from "@/components/ui";
+import { Section, SectionHeader, buttonVariants, HeroImage } from "@/components/ui";
 import { CoverageMap } from "@/components/coverage/coverage-map";
 import { FleetTable } from "@/components/coverage/fleet-table";
 
@@ -14,8 +14,12 @@ export default function CoveragePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy-900 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy-900 py-16 md:py-24">
+        <HeroImage
+          src="/images/heroes/hero-coverage.png"
+          alt="Aerial view of Colorado's Front Range corridor from Denver to Colorado Springs"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-400">
             Coverage & Fleet
           </p>

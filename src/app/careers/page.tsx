@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Section, SectionHeader, Button, Card, CardContent } from "@/components/ui";
+import { Section, SectionHeader, Button, Card, CardContent, HeroImage } from "@/components/ui";
 import { FormField, Input, Select } from "@/components/forms/form-field";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
@@ -113,8 +113,12 @@ export default function CareersPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy-900 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy-900 py-16 md:py-24">
+        <HeroImage
+          src="/images/heroes/hero-careers.png"
+          alt="Diverse team of courier drivers standing in front of delivery vehicles"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-400">
             Join Our Team
           </p>

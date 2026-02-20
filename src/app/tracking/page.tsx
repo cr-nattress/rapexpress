@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Section, SectionHeader, Button } from "@/components/ui";
+import { Section, SectionHeader, Button, HeroImage } from "@/components/ui";
 import { FormField, Input, Select, Textarea } from "@/components/forms/form-field";
 
 const portalFeatures = [
@@ -67,8 +67,12 @@ export default function TrackingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy-900 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy-900 py-16 md:py-24">
+        <HeroImage
+          src="/images/heroes/hero-tracking.png"
+          alt="Logistics dashboard showing delivery tracking map and route pins"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-400">
             Technology & Tracking
           </p>

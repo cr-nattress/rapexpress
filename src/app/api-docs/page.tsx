@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Section, SectionHeader, Container } from "@/components/ui";
+import { Section, SectionHeader, Container, HeroImage } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "API Documentation",
@@ -86,8 +86,12 @@ const endpoints = [
 export default function ApiDocsPage() {
   return (
     <>
-      <section className="bg-navy-900 py-12 md:py-16">
-        <Container>
+      <section className="relative overflow-hidden bg-navy-900 py-12 md:py-16">
+        <HeroImage
+          src="/images/heroes/hero-tracking.png"
+          alt="Logistics technology dashboard"
+        />
+        <Container className="relative">
           <h1 className="text-3xl font-bold text-white md:text-4xl">API Documentation</h1>
           <p className="mt-3 max-w-2xl text-gray-300">
             Integrate with Rap Express programmatically. Submit quotes, track deliveries, and

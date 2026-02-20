@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui";
+import { buttonVariants, HeroImage } from "@/components/ui";
 
 interface HeroProps {
   heading?: string;
@@ -25,14 +25,10 @@ export function Hero(props: HeroProps) {
 
   return (
     <section className="relative overflow-hidden bg-navy-900 py-20 md:py-32">
-      {/* Background pattern */}
-      <div
-        className="absolute inset-0 opacity-10"
-        aria-hidden="true"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 25% 50%, rgba(255,107,53,0.3) 0%, transparent 50%), radial-gradient(circle at 75% 50%, rgba(255,107,53,0.15) 0%, transparent 50%)",
-        }}
+      <HeroImage
+        src="/images/heroes/hero-home.png"
+        alt="Courier van driving through Colorado Springs with Pikes Peak in the background"
+        priority
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Section, SectionHeader, buttonVariants } from "@/components/ui";
+import { Section, SectionHeader, buttonVariants, HeroImage } from "@/components/ui";
 import { ServiceCard, type ServiceTierData } from "@/components/services/service-card";
 import { ComparisonTable } from "@/components/services/comparison-table";
 import { FaqAccordion } from "@/components/services/faq-accordion";
@@ -146,8 +146,12 @@ export default function ServicesPage() {
       />
 
       {/* Hero */}
-      <section className="bg-navy-900 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy-900 py-16 md:py-24">
+        <HeroImage
+          src="/images/heroes/hero-services.png"
+          alt="Professional courier driver handling packages at a loading dock"
+        />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-orange-400">
             Our Services
           </p>
