@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Section, SectionHeader, Card, CardContent, Tag } from "@/components/ui";
+import { NewsletterSignup } from "@/components/marketing/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "Blog & Resources | Rap Express — Courier Tips & Industry News",
@@ -108,6 +109,12 @@ export default function BlogPage() {
               </Card>
             </Link>
           ))}
+        </div>
+      </Section>
+
+      <Section variant="gray">
+        <div className="mx-auto max-w-2xl">
+          <NewsletterSignup />
         </div>
       </Section>
     </>

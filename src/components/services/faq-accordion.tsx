@@ -56,6 +56,7 @@ export function FaqAccordion({ items = defaultFaqs }: FaqAccordionProps) {
             className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-gray-50"
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
             aria-expanded={openIndex === i}
+            aria-controls={`faq-panel-${i}`}
           >
             <span className="pr-4 font-semibold text-navy-900">{item.question}</span>
             <svg
@@ -70,7 +71,7 @@ export function FaqAccordion({ items = defaultFaqs }: FaqAccordionProps) {
             </svg>
           </button>
           {openIndex === i && (
-            <div className="px-6 pb-4">
+            <div id={`faq-panel-${i}`} role="region" aria-labelledby={`faq-btn-${i}`} className="px-6 pb-4">
               <p className="text-gray-600">{item.answer}</p>
             </div>
           )}
